@@ -3,29 +3,18 @@ package com.estudos.programador;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProgramadorApplication {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+		ArrayList<Integer> idades = new ArrayList<>(); //Cria uma lista de INTEIROS (Integer)
+		idades.add(25); //.add  porque ArrayList é um objeto, e .add() é o mét. oficial para adicionar elementos a ele                               // operador <> significa diamante e dentro dele coloca o parametro do tipo
+		idades.add(33);
 
-		System.out.println("Digite a nota 1: ");
-		double nota1 = sc.nextDouble();
-
-		System.out.println("Digite a nota 2: ");
-		double nota2 = sc.nextDouble();
-
-		System.out.println("Digite a nota 3: ");
-		double nota3 = sc.nextDouble();
-
-		double media = (nota1 + nota2 + nota3) /3;
-
-		System.out.println("média final: " + media);
-
-
-
+		idades.get(0);
 
 
 
