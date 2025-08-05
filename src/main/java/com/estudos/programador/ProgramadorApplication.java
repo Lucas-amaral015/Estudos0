@@ -9,15 +9,22 @@ import java.util.Scanner;
 public class ProgramadorApplication {
 
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite um número: ");
+		int option = sc.nextInt();
 
-		ArrayList<Integer> idades = new ArrayList<>(); //Cria uma lista de INTEIROS (Integer)
-		idades.add(25); //.add  porque ArrayList é um objeto, e .add() é o mét. oficial para adicionar elementos a ele                               // operador <> significa diamante e dentro dele coloca o parametro do tipo
-		idades.add(33);
+		switch (option){
+			case 1 -> System.out.println("Domingo");
+			case 2 -> System.out.println("Segunda");
+			case 3 -> System.out.println("Terça");
+			case 4 -> System.out.println("Quarta");
+			case 5 -> System.out.println("Quinta");
+			case 6 -> System.out.println("Sexta");
+			case 7 -> System.out.println("Sábado");
+			default -> System.out.println("Número inválido!!");
+		}
 
-		idades.get(0);
-
-
-
+		sc.close();
 	}
 
 }
