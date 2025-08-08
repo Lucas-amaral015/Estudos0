@@ -12,16 +12,17 @@ public class ProgramadorApplication {
 
 		PessoaFisica pessoa = new PessoaFisica();
 		pessoa.cpf = "48177720856";
-		pessoa.idade = 25;
+		pessoa.age = 25;
 		pessoa.name = "Lucas Amaral";
-		pessoa.renda = 3000.00;
-		pessoa.mensagem();
+		pessoa.income = 3000.00;
+		pessoa.mensagemPf();
 		pessoa.mensagemGenerica();
+		pessoa.mensagemGenerica(2);
 
 		EmpresaCnpj empresa = new EmpresaCnpj();
 		empresa.cnpj = "35211420859";
-		empresa.renda = 100000.00;
-		empresa.mensagem();
+		empresa.income = 100000.00;
+		empresa.mensagemPj();
 		empresa.mensagemGenerica();
 	}
 
