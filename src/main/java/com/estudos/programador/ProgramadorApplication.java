@@ -9,22 +9,20 @@ import java.util.Scanner;
 public class ProgramadorApplication {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Digite um número: ");
-		int option = sc.nextInt();
 
-		switch (option){
-			case 1 -> System.out.println("Domingo");
-			case 2 -> System.out.println("Segunda");
-			case 3 -> System.out.println("Terça");
-			case 4 -> System.out.println("Quarta");
-			case 5 -> System.out.println("Quinta");
-			case 6 -> System.out.println("Sexta");
-			case 7 -> System.out.println("Sábado");
-			default -> System.out.println("Número inválido!!");
-		}
+		PessoaFisica pessoa = new PessoaFisica();
+		pessoa.cpf = "48177720856";
+		pessoa.idade = 25;
+		pessoa.name = "Lucas Amaral";
+		pessoa.renda = 3000.00;
+		pessoa.mensagem();
+		pessoa.mensagemGenerica();
 
-		sc.close();
+		EmpresaCnpj empresa = new EmpresaCnpj();
+		empresa.cnpj = "35211420859";
+		empresa.renda = 100000.00;
+		empresa.mensagem();
+		empresa.mensagemGenerica();
 	}
 
 }
