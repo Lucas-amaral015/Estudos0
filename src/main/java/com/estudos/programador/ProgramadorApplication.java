@@ -18,12 +18,14 @@ public class ProgramadorApplication {
 		pessoa.mensagemPf();
 		pessoa.mensagemGenerica();
 		pessoa.mensagemGenerica(2);
+		pessoa.emprestimo();
 
 		EmpresaCnpj empresa = new EmpresaCnpj();
 		empresa.setCnpj("35211420859");
 		empresa.setIncome(100000.00);
 		empresa.mensagemPj();
 		empresa.mensagemGenerica();
+		empresa.emprestimo();
 	}
 
 }
