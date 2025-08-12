@@ -1,24 +1,34 @@
-# Estruturas de Repetição
+# 📄 Regra de Negócio - Aprovação de Cartão de Crédito (Pessoa Física)
 
-As estruturas de repetição permitem executar um bloco de código várias vezes, com base em uma condição lógica.
+## Descrição
 
-Use quando quiser repetir ações como **contar**, **percorrer listas** ou **esperar uma condição mudar**.
+O programa cadastra o cliente e, em seguida, aplica uma regra de negócio para definir qual tipo de cartão de crédito ele pode receber.
+O projeto foi desenvolvido utilizando **camadas de classes** e uma **interface** para garantir separação de responsabilidades e fácil manutenção do código.
+## Fluxo do Programa
 
----
+1. O usuário informa **nome** e **CPF**.
 
-## 🔁 TIPOS DE LAÇOS
+2. O sistema exibe a mensagem:
 
-### 🔹 `for`
+3. Em seguida, o usuário informa **idade** e **renda mensal**.
 
-- Usar quando **souber exatamente** quantas vezes deseja repetir.
-- Exemplo de uso: contagens controladas, percorrer arrays com índice.
+4. O sistema aplica a regra de negócio:
+- Renda **maior ou igual a 2000** → aprova **Cartão Gold**.
+- Renda **maior ou igual a 4000** → aprova **Cartão Platinum**.
+- Renda **maior ou igual a 7000** → aprova **Cartão Ultravioleta**.
+- Caso não atenda aos critérios, o pedido é reprovado.
 
-### 🔹 `while`
 
-- Usar quando deseja repetir **até que uma condição mude**.
-- Ideal quando **não sabe quantas vezes** o laço precisará rodar.
+## Exemplo de Uso
 
-### 🔹 `do-while`
+**Entrada:**
 
-- Usar quando **precisar garantir pelo menos uma execução**.
-- A condição é verificada **após** o primeiro bloco de código ser executado.
+Nome: Lucas Amaral
+CPF: 123.456.789-00
+(Programa mostra "Cadastro realizado com sucesso!")
+
+Idade: 30
+Renda mensal: 4500
+
+## Observações
+- Atualmente, a análise é feita apenas com base na **idade** e **renda mensal**.

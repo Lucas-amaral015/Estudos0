@@ -3,22 +3,20 @@ package com.estudos.programador;
 
 public class Cliente {
 
-    /*aqui se aplica o encapsulamento para proteger as variáveis.
-    - uso de getters e setters;
-    - get - pegar/mostrar informações
-    - set - alterar ou incluir informações;
-    - encapsular ele cria barreiras para não ser acessado em qualquer lugar
-    - cria abstração.
-     */
 
     private String name;
     private String cpf;
     private double income;
     private int age;
     private String cnpj;
+    private String email;
 
-    public void mensagemGenerica(){
-        System.out.println("Cadastro realizado com sucesso!");
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
