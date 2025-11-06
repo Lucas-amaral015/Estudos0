@@ -7,55 +7,19 @@ public class ProgramadorApplication {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-		MenuInicial menu = new MenuInicial();
+		String[][] nomesEIdade = new String[2][3];
 
-		int opcao = 0;
-		int CADASTRO_MAXIMO = 2;
-		String cadastroRealizado;
-		int guardarCadastro = 0;
+		nomesEIdade[0][0] = "Lucas";
+		nomesEIdade[0][1] = "25";
+		nomesEIdade[0][2] = "Brasil";
 
-		String[] cadastrarPessoa = new String[CADASTRO_MAXIMO];
+		nomesEIdade[1][0] = "Giovana";
+		nomesEIdade[1][1] = "27";
+		nomesEIdade[1][2] = "EUA";
 
-		while (opcao != 3) {
-
-			menu.mensagemInicial();
-			opcao = sc.nextInt();
-			sc.nextLine();
-
-			switch (opcao){
-
-				case 1:
-					if (guardarCadastro < CADASTRO_MAXIMO){
-						System.out.println("Digite o nome da pessoa");
-						cadastroRealizado = sc.nextLine();
-						cadastrarPessoa[guardarCadastro] = cadastroRealizado;
-						guardarCadastro++;
-						System.out.println("Cadastro realizado com sucesso");
-					}
-					else {
-						System.out.println("Todos espaços preenchidos!");
-					}
-					break;
-
-				case 2:
-					if (guardarCadastro == 0){
-						System.out.println("Nenhum cadastro realizado! Cadastre para ver as opções.");
-					}
-					else {
-						for (String mostrarLista : cadastrarPessoa){
-							System.out.println(mostrarLista);
-						}
-					}
-					break;
-
-				case 3:
-					System.out.println("Encerrando programa...");
-					break;
-
-				default:
-					System.out.println("Número invalido! tente novamente");
-			}
+		for (int i = 0; i < nomesEIdade.length; i++){
+			System.out.println("nome: " + nomesEIdade[i] [0] + "\nidade : " + nomesEIdade[i][1] + "\nNacionalidade: " + nomesEIdade[i][2]);
+			System.out.println();
 		}
 	}
 
