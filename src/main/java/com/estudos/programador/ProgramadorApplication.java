@@ -1,9 +1,6 @@
 package com.estudos.programador;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProgramadorApplication {
@@ -11,49 +8,55 @@ public class ProgramadorApplication {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+		MenuInicial menu = new MenuInicial();
 
-		PessoaFisica pessoa = new PessoaFisica();
+		int opcao = 0;
+		int CADASTRO_MAXIMO = 2;
+		String cadastroRealizado;
+		int guardarCadastro = 0;
 
-		System.out.println("Digite seu nome:");
-		pessoa.setName(sc.nextLine());
+		String[] cadastrarPessoa = new String[CADASTRO_MAXIMO];
 
-		System.out.println("Digite o CPF:");
-		pessoa.setCpf(sc.nextLine());
+		while (opcao != 3) {
 
-		System.out.println("Cadastro realizado com sucesso!");
+			menu.mensagemInicial();
+			opcao = sc.nextInt();
+			sc.nextLine();
 
-		System.out.println("Digite sua idade:");
-		pessoa.setAge(sc.nextInt());
+			switch (opcao){
 
-		System.out.println("Digite sua renda mensal:");
-		pessoa.setIncome(sc.nextDouble());
-		pessoa.regraNegocio();
+				case 1:
+					if (guardarCadastro < CADASTRO_MAXIMO){
+						System.out.println("Digite o nome da pessoa");
+						cadastroRealizado = sc.nextLine();
+						cadastrarPessoa[guardarCadastro] = cadastroRealizado;
+						guardarCadastro++;
+						System.out.println("Cadastro realizado com sucesso");
+					}
+					else {
+						System.out.println("Todos espaços preenchidos!");
+					}
+					break;
 
+				case 2:
+					if (guardarCadastro == 0){
+						System.out.println("Nenhum cadastro realizado! Cadastre para ver as opções.");
+					}
+					else {
+						for (String mostrarLista : cadastrarPessoa){
+							System.out.println(mostrarLista);
+						}
+					}
+					break;
 
+				case 3:
+					System.out.println("Encerrando programa...");
+					break;
 
-
-
-
-		/*PessoaFisica pessoa = new PessoaFisica();
-		pessoa.setCpf("48177720856");
-		pessoa.setName("Lucas Amaral");
-		pessoa.setIncome(3000.0);
-		pessoa.mensagemPf();
-		pessoa.mensagemGenerica();
-		pessoa.mensagemGenerica(2);
-		pessoa.emprestimo();
-		pessoa.regraNegocio();
-
-		EmpresaCnpj empresa = new EmpresaCnpj();
-		empresa.setCnpj("35211420859");
-		empresa.setIncome(100000.00);
-		empresa.mensagemPj();
-		empresa.mensagemGenerica();
-		empresa.emprestimo();
-
-		 */
-
-		sc.close();
+				default:
+					System.out.println("Número invalido! tente novamente");
+			}
+		}
 	}
 
 }
