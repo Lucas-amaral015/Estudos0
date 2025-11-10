@@ -7,25 +7,13 @@ public class ProgramadorApplication {
 
 	public static void main(String[] args) {
 
-		Ninja ninja = new Ninja();
-		ninja.idade = 15;
-		ninja.missao = "Derrotar Gaara";
-		ninja.nivelDificuldade = "Difícil";
-		ninja.statusMissao = "a realizar";
-		ninja.nome = "Naruto";
-		ninja.mostrarInformações();
+		NinjaBasico ninjaBasico = new NinjaBasico("Naruto", 16, TipoHabilidade.GENJUTSU);
+		ninjaBasico.mostrarInformacoes();
+		ninjaBasico.executarHabilidade();
 		System.out.println();
 
-		Uchiha uchiha = new Uchiha();
-
-		uchiha.habilidadeEspecialAtributo = "Ativar Sharingan!!";
-		uchiha.idade = 18;
-		uchiha.nome = "Sasuke";
-		uchiha.missao = "achar Naruto";
-		uchiha.nivelDificuldade = "Média";
-		uchiha.statusMissao = "Fazendo";
-		uchiha.mostrarInformações();
-
-
+		NinjaPro ninjaPro = new NinjaPro("Manipulação de Areia", "Gaara", TipoHabilidade.KATON, 20);
+		ninjaPro.mostrarInformacoes();
+		ninjaPro.executarHabilidade();
 	}
 }
