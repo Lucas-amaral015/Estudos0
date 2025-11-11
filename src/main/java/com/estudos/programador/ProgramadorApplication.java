@@ -7,13 +7,9 @@ public class ProgramadorApplication {
 
 	public static void main(String[] args) {
 
-		NinjaBasico ninjaBasico = new NinjaBasico("Naruto", 16, TipoHabilidade.GENJUTSU);
-		ninjaBasico.mostrarInformacoes();
-		ninjaBasico.executarHabilidade();
-		System.out.println();
+		Uchiha sasuke = new Uchiha("Sasuke", null, 17, TipoHabilidade.NINJUTSU);
+		sasuke.mostrarDetalhes();
 
-		NinjaPro ninjaPro = new NinjaPro("Manipulação de Areia", "Gaara", TipoHabilidade.KATON, 20);
-		ninjaPro.mostrarInformacoes();
-		ninjaPro.executarHabilidade();
+
 	}
 }
