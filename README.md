@@ -1,34 +1,31 @@
-# 📄 Regra de Negócio - Aprovação de Cartão de Crédito (Pessoa Física)
+# Gerenciamento de Contas Bancárias
 
-## Descrição
+Este projeto Java é a solução para um desafio de Programação Orientada a Objetos (POO), focado na modelagem de um sistema de contas bancárias utilizando interfaces, classes abstratas e herança. O objetivo principal é definir comportamentos comuns e específicos para diferentes tipos de contas através de uma arquitetura limpa e organizada.
 
-O programa cadastra o cliente e, em seguida, aplica uma regra de negócio para definir qual tipo de cartão de crédito ele pode receber.
-O projeto foi desenvolvido utilizando **camadas de classes** e uma **interface** para garantir separação de responsabilidades e fácil manutenção do código.
-## Fluxo do Programa
+---
 
-1. O usuário informa **nome** e **CPF**.
+## 🛠 Estrutura e Conceitos POO
 
-2. O sistema exibe a mensagem:
+O projeto é construído em torno de quatro componentes principais, atendendo aos requisitos do desafio:
 
-3. Em seguida, o usuário informa **idade** e **renda mensal**.
+### 1. Interface `Conta`
+Define o contrato de comportamento para todas as contas.
+* `consultarSaldo()`
+* `depositar(double valor)`
+* `mostrarCadastro()`
 
-4. O sistema aplica a regra de negócio:
-- Renda **maior ou igual a 2000** → aprova **Cartão Gold**.
-- Renda **maior ou igual a 4000** → aprova **Cartão Platinum**.
-- Renda **maior ou igual a 7000** → aprova **Cartão Ultravioleta**.
-- Caso não atenda aos critérios, o pedido é reprovado.
+### 2. Classe Abstrata `ContaBancaria`
+Serve como a classe base (superclasse) para todas as contas concretas.
+* Implementa a interface `Conta`.
+* Contém atributos comuns: `nome`, `cpf`, `tipoConta` (Enum), e `saldo` (double).
+* O método `depositar(double valor)` é deixado como **abstrato** para que as subclasses implementem suas regras específicas.
 
+### 3. Classes Concretas (Subclasses)
 
-## Exemplo de Uso
+Ambas as classes concretas estendem a classe abstrata **ContaBancaria** e implementam suas regras de depósito específicas:
 
-**Entrada:**
+A **ContaCorrente** estende `ContaBancaria` e implementa o método `depositar()` adicionando o valor diretamente ao saldo. Já a **ContaPoupanca** também estende `ContaBancaria`, mas implementa o método `depositar()` adicionando o valor ao saldo após a dedução de uma taxa.
 
-Nome: Lucas Amaral
-CPF: 123.456.789-00
-(Programa mostra "Cadastro realizado com sucesso!")
-
-Idade: 30
-Renda mensal: 4500
-
-## Observações
-- Atualmente, a análise é feita apenas com base na **idade** e **renda mensal**.
+### 4. Enum `TipoConta`
+Usado para tipificar de forma segura os tipos de conta.
+* **Constantes:** `CORRENTE`, `POUPANCA`.
