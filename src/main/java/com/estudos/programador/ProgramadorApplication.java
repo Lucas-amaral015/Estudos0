@@ -1,18 +1,18 @@
 package com.estudos.programador;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.Stack;
 
 public class ProgramadorApplication {
 
 	public static void main(String[] args) {
 
-		Registro<Object> registro = new Registro<>();
-		registro.adicionarRegistro(new RegistroPj("Nossa Ginga"));
-		registro.adicionarRegistro(new RegistroPf("Lucas Amaral"));
-		registro.mostrarRegistro();
-
+		Stack<String> stackInicial = new Stack<>();
+		stackInicial.push("Lucas Amaral");
+		stackInicial.push("Giovana");
+		System.out.println("Valor sem exclusão: " + stackInicial);
+		stackInicial.pop();
+		System.out.println();
+		System.out.println("Valor após a exclusão: " + stackInicial);
 	}
 }
